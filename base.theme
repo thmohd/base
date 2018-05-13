@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implement hook_preprocess_html().
+ * Adding classes to the body shwoign sidebars
+ */
+ 
+ function base_preprocess_html(&$variables){
+    if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+        $variables['attributes']['class'][] = 'two-sidebars';
+    }
+    elseif (!empty($variables['page']['sidebar_first'])) {
+        $variables['attributes']['class'][] = 'one-sidebar sidebar-first';
+    }
+    elseif (!empty($variables['page']['sidebar_second'])) {
+        $variables['attributes']['class'][] = 'one-sidebar sidebar-second';
+    }
+    else {
+        $variables['attributes']['class'][] = 'no-sidebars';
+    }
+ }

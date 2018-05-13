@@ -1,0 +1,30 @@
+
+{% set heading_id = attributes.id ~ '-menu'|clean_id %}
+<nav class="navbar navbar-default" role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      
+      {% if not configuration.label_display %}
+        {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+      {% endif %}
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        {{ title_prefix }}
+          <h2 {{ title_attributes }}>{{ configuration.label }}</h2>
+        {{ title_suffix }}
+        <span>Menu</span>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar">
+           {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+</nav>

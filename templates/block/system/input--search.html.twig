@@ -1,0 +1,13 @@
+{% set classes = ['form-control',] %}
+
+
+    <div class="input-group">
+      <input{{attributes.addClass(classes).setAttribute
+        ('placeholder','Search...') }} />
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Go</button>
+      </span>
+    </div><!-- /input-group -->
+    
+    
+   {{ children }}

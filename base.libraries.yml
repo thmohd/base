@@ -1,0 +1,29 @@
+base:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery
+
+bootstrap:
+  version: 4.0.0
+  css:
+    theme:
+      https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css: {type: external, minified: true}
+  js:
+    https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js: {type: external, minified: true}
+  dependencies:
+    - core/jquery 
+
+flexslider:
+  version: 2.5.0
+  css:
+    theme:
+      vendor/flexslider/flexslider.css: {}
+  js: 
+    vendor/flexslider/jquery.flexslider-min.js: {}
+  dependencies:
+    - core/jquery
+    

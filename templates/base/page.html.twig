@@ -1,0 +1,65 @@
+<div class="page-wrapper">
+<div class="layout-container">
+
+  <header role="banner">
+    {{ page.header }}
+  </header>
+
+  <div id="navigation">
+    {{ page.primary_menu }}
+  </div>
+  
+  {{ page.secondary_menu }}
+  
+  <div id="highlighted">
+    {{ page.highlighted }}
+  </div>
+
+  {{ page.breadcrumb }}
+
+  {{ page.help }}
+
+  <main role="main" id="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    <div class="layout-content">
+      {{ page.content }}
+    </div>{# /.layout-content #}
+
+    {% if page.sidebar_first %}
+      <aside class="layout-sidebar-first" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+
+    {% if page.sidebar_second %}
+      <aside class="layout-sidebar-second" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
+
+  </main>
+  
+  {% if page.secondary %}
+    <div id="secondary">
+      {{ page.secondary }}
+    </div>
+  {% endif %}
+
+  {% if page.footer_bottom or page.footer_top %}
+    <footer id="footer" role="contentinfo">
+      {% if page.footer_top %}
+        <div class="footer-top">
+          {{ page.footer_top }}
+        </div>
+      {% endif %}
+      {% if page.footer_bottom %}
+        <div class="footer-bottom">
+          {{ page.footer_bottom }}
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+
+</div>{# /.layout-container #}
+</div>{# /.page-wrapper #}
